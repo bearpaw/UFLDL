@@ -37,8 +37,8 @@ lambda = 1e-4; % Weight decay parameter
 
 addpath(genpath('../MNIST/'));
 
-images = loadMNISTImages('mnist/train-images.idx3-ubyte');
-labels = loadMNISTLabels('mnist/train-labels.idx1-ubyte');
+images = loadMNISTImages('train-images-idx3-ubyte');
+labels = loadMNISTLabels('train-labels-idx1-ubyte');
 labels(labels==0) = 10; % Remap 0 to 10
 
 inputData = images;
@@ -110,8 +110,8 @@ softmaxModel = softmaxTrain(inputSize, numClasses, lambda, ...
 %  (in softmaxPredict.m), which should return predictions
 %  given a softmax model and the input data.
 
-images = loadMNISTImages('mnist/t10k-images.idx3-ubyte');
-labels = loadMNISTLabels('mnist/t10k-labels.idx1-ubyte');
+images = loadMNISTImages('t10k-images-idx3-ubyte');
+labels = loadMNISTLabels('t10k-labels-idx1-ubyte');
 labels(labels==0) = 10; % Remap 0 to 10
 
 inputData = images;
